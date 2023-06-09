@@ -29,17 +29,44 @@
                 android:id="@+id/loginText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Log In"
+                android:text="Sign In"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/firstname"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
+                android:background="@drawable/bg_input"
+                android:drawableEnd="@drawable/baseline_email_24"
+                android:drawablePadding="8dp"
+                android:hint="First Name"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background" />
+
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_input"
+                android:drawableEnd="@drawable/baseline_lock_open_24"
+                android:drawablePadding="8dp"
+                android:hint="Last Name"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/bg_input"
                 android:drawableEnd="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
@@ -63,41 +90,17 @@
                 android:textColorHighlight="@color/cardview_dark_background" />
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/resterButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/roundedbtn"
                 android:backgroundTint="#8BC59B"
-                android:text="Login"
+                android:text="Register"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="115dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4"
-                app:srcCompat="@drawable/gmail"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/signupText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginBottom="10dp"
-                android:padding="8dp"
-                android:text="Don’t have account? Register Now"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
 
         </LinearLayout>
 
