@@ -146,7 +146,7 @@
                 android:layout_below="@+id/tv_title_description"
                 android:fontFamily="@font/poppins_light"
                 android:paddingLeft="20dp"
-                android:paddingTop="dp"
+                android:paddingTop="20dp"
                 android:text="Description "
                 android:textSize="15sp" />
 
