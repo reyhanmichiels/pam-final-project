@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/displaynama"
+        android:id="@+id/tv_name_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/displaytask"
+        android:id="@+id/tv_taskCount_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -120,9 +120,9 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/addtask"
+                android:id="@+id/et_title_create"
                 android:layout_width="295dp"
-                android:layout_height="44dp"
+                android:layout_height="48dp"
                 android:layout_below="@+id/titletask"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
@@ -139,10 +139,10 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/description"
+                android:id="@+id/tv_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/addtask"
+                android:layout_below="@+id/et_title_create"
                 android:fontFamily="@font/poppins_semibold"
                 android:paddingLeft="24dp"
                 android:paddingTop="20dp"
@@ -150,10 +150,10 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/adddescription"
+                android:id="@+id/et_description_create"
                 android:layout_width="295dp"
                 android:layout_height="140dp"
-                android:layout_below="@+id/description"
+                android:layout_below="@+id/tv_description"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
@@ -170,10 +170,10 @@
                 android:textSize="12sp" />
 
             <Button
-                android:id="@+id/btncreate"
+                android:id="@+id/btn_add_create"
                 android:layout_width="120dp"
-                android:layout_height="32dp"
-                android:layout_below="@+id/adddescription"
+                android:layout_height="48dp"
+                android:layout_below="@+id/et_description_create"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="182dp"
@@ -186,10 +186,10 @@
                 android:textSize="14sp" />
 
             <Button
-                android:id="@+id/btncancel"
+                android:id="@+id/btn_cancel_create"
                 android:layout_width="120dp"
-                android:layout_height="32dp"
-                android:layout_below="@+id/adddescription"
+                android:layout_height="48dp"
+                android:layout_below="@+id/et_description_create"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="22dp"
                 android:layout_marginTop="25dp"
