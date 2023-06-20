@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     SignInButton btnGoogle;
     TextView tvRegister;
     GoogleSignInClient googleSignInClient;
+    static GoogleSignInOptions gso;
     FirebaseAuth firebaseAuth;
 
     @Override
@@ -50,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
         tvRegister = findViewById(R.id.register);
         firebaseAuth = FirebaseAuth.getInstance();
 
-        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
-        googleSignInClient = GoogleSignIn.getClient(MainActivity.this, googleSignInOptions);
+        googleSignInClient = GoogleSignIn.getClient(MainActivity.this, gso);
 
         btnGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
