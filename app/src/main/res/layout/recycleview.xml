@@ -110,4 +110,17 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/btn_cancel"
+        android:backgroundTint="#F32E2E"
+        android:text="Logout"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/btn_addTask"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
