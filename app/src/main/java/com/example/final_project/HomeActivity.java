@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,12 +28,13 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
     TextView tvName, tvTaskCount;
-    Button btnAddTask;
+    Button btnAddTask, btnLogout;
     RecyclerView rv;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private GoogleSignInClient googleSignInClient;
     List<Task> listTask = new ArrayList<>();
 
     @Override
@@ -42,9 +45,11 @@ public class HomeActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tv_name_create);
         tvTaskCount = findViewById(R.id.tv_taskCount_create);
         btnAddTask = findViewById(R.id.btn_addTask);
+        btnLogout = findViewById(R.id.btn_logout);
         rv = findViewById(R.id.rv);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
+        googleSignInClient = GoogleSignIn.getClient(this, MainActivity.gso);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
@@ -58,6 +63,17 @@ public class HomeActivity extends AppCompatActivity {
                 it.putExtra("name", firebaseUser.getDisplayName().toString());
                 it.putExtra("taskCount", String.valueOf(listTask.size()) + " task");
                 startActivity(it);
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                googleSignInClient.signOut();
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
             }
         });
     }
