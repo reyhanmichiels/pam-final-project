@@ -46,7 +46,7 @@ public class DescriptionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent(DescriptionActivity.this, HomeActivity.class);
                 finish();
-                startActivity(it);
+//                startActivity(it);
             }
         });
 

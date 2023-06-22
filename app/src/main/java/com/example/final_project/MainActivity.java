@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // When task is successful redirect to profile activity display Toast
                                     startActivity(new Intent(MainActivity.this, HomeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                    finish();
                                     displayToast("Firebase authentication successful");
                                 } else {
                                     // When task is unsuccessful display Toast
@@ -173,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
     public void updateUI(FirebaseUser user) {
         if (user != null) {
             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            finish();
             startActivity(intent);
         } else {
             Toast.makeText(MainActivity.this,"Log In First", Toast.LENGTH_SHORT).show();
